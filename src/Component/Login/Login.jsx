@@ -24,6 +24,10 @@ const Login = () => {
         userLogin(email, password)
             .then(result => {
                 // console.log(result)
+                if (result.user) {
+                    toast.success('Login Successful.....!')
+                    navigate(from, { replace: true })
+                }
             })
             .catch(err => {
                 toast.error(err.message)
@@ -37,9 +41,6 @@ const Login = () => {
         signInWithGoogle()
             .then(result => {
                 console.log(result.user)
-                const userData = {
-                    email: result.user.email, userType: 'user'
-                }
                 toast.success('Login Successful.....!')
                 setLoading(false)
                 navigate(from, { replace: true })

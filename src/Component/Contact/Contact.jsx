@@ -39,7 +39,7 @@ const Contact = () => {
             );
     };
     return (
-        <section data-aos="fade-up" data-aos-duration="1500">
+        <div className="pb-7" data-aos="fade-up" data-aos-duration="1500">
             <h2 className="text-3xl text-orange-500 mt-5 mb-8 font-bold text-center">Contact US</h2>
             <div className="w-3/4 grid md:grid-cols-2 sm:grid-cols-1 h-full  gap-6 mx-auto 
             "
@@ -122,7 +122,7 @@ const Contact = () => {
                     </button>
                 </form>
             </div>
-        </section>
+        </div>
     );
 };
 
