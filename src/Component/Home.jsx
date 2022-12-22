@@ -26,6 +26,32 @@ const Home = () => {
             <JobCategory />
             {/* this is company category */}
             <HiringCompany />
+
+            {/* Learn sections  */}
+            <div className='my-16 p-5 bg-slate-900 rounded-lg w-11/12 mx-auto'>
+                <div className='grid grid-cols-1 md:grid-cols-3 gap-5'>
+                    <div className='flex justify-center items-center'>
+                        <img src="https://static.naukimg.com/s/0/0/i/ff-services.png" alt="" />
+                    </div>
+                    <div className='md:ml-[-150px] text-orange-500'>
+                        <h3 className='text-2xl font-bold'>Accelerate your job search with premium services</h3>
+                        <p className='my-4'>Services to help you get hired, faster: from preparing your CV, getting recruiter attention, finding the right jobs, and more!</p>
+                        <div className='flex flex-col gap-3 md:flex-row'>
+                            <p className='btn btn-outline text-orange-500 mr-3'>Resume writing</p>
+                            <p className='btn btn-outline text-orange-500 mr-3'>Priority applicant</p>
+                            <p className='btn btn-outline text-orange-500 mr-3'>Resume display</p>
+                        </div>
+                    </div>
+                    <div className='flex justify-center items-center flex-col'>
+                        <PrimaryButton className='btn'>Learn More</PrimaryButton>
+                        <p className='text-orange-500'>
+                            Learn more
+                            Includes paid services
+                        </p>
+                    </div>
+                </div>
+            </div>
+
             {/* this is login */}
             <Login />
             {/* this is contact */}
