@@ -2,7 +2,7 @@ import { useEffect } from "react"
 
 const useSetTitle = title => {
     useEffect(() => {
-        document.title = `${title} - Employee Attendance Application`
+        document.title = `${title} - Find A Job`
     }, [title])
 }
 
