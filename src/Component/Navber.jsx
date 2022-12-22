@@ -6,7 +6,7 @@ import { FcBusinessman } from 'react-icons/fc';
 
 const NavBer = () => {
 
-    const { user } = useContext(AuthContext)
+    const { user, LogOut } = useContext(AuthContext)
 
     return (
         <div className="navbar bg-slate-900 text-white">
@@ -30,7 +30,7 @@ const NavBer = () => {
                         <li><Link to={'/'}>Homepage</Link></li>
                         {
                             user &&
-                            <li><Link to={'findJob'}>Find Jobs</Link></li>
+                            <li><Link to={'/findJob'}>Find Jobs</Link></li>
                         }
                         <li><Link to={'/contact'}>Contact US</Link></li>
                         {
@@ -39,7 +39,7 @@ const NavBer = () => {
                                 :
                                 <>
                                     <li><Link to={'/login'}>Sign In</Link></li>
-                                    <li><Link to={'/contact'}>Sign Up</Link></li>
+                                    <li><Link to={'/register'}>Sign Up</Link></li>
                                 </>
                         }
 
@@ -52,12 +52,16 @@ const NavBer = () => {
             <div className="navbar-end">
                 {/* when user loging then show it, now testing  */}
                 {
-                    !user && <>
-                        <p className=' text-xl text-orange-500 mr-5'>Welcome</p>
+                    user && <>
+                        <p className=' text-xl text-orange-500 mr-5'>Welcome {user.displayName}</p>
                         <div className="dropdown dropdown-end">
                             <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
                                 <div className="w-10 rounded-full">
-                                    <FcBusinessman className='text-4xl' />
+                                    {
+                                        user?.photoURL ?
+                                            <img src={user.photoURL} alt="" />
+                                            : <FcBusinessman className='text-4xl' />
+                                    }
                                 </div>
                             </label>
                             <ul tabIndex={0}
@@ -69,7 +73,7 @@ const NavBer = () => {
                                         <span className="badge">New</span>
                                     </a>
                                 </li>
-                                <li><button>Sign Out</button></li>
+                                <li><button onClick={LogOut}>Sign Out</button></li>
                             </ul>
                         </div>
                     </>

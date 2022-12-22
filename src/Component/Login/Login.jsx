@@ -12,7 +12,7 @@ const Login = () => {
     const { userLogin, loading, setLoading, signInWithGoogle, resetPassword } = useContext(AuthContext)
     const navigate = useNavigate()
     const location = useLocation()
-    const from = location.state?.from?.pathname || '/'
+    const from = '/' || location.state?.from?.pathname;
 
     const handleSubmit = event => {
         event.preventDefault()
@@ -53,6 +53,9 @@ const Login = () => {
 
     // // Password reset
     const handleReset = () => {
+        if (!userEmail) {
+            toast.error('Please Enter Your Email')
+        }
         resetPassword(userEmail)
             .then(() => {
                 toast.success('Please check your email for reset link')
